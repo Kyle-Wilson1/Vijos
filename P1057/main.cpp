@@ -14,9 +14,7 @@ int main() {
 
     vector<vector<int>> f(1000, vector<int>(1000, 0));
     vector<vector<int>> map(1000, vector<int>(1000, 0));
-    Node initNode;
-    initNode.left = 0;
-    initNode.up = 0;
+    Node initNode{0, 0};
     vector<vector<Node>> node(1000, vector<Node>(1000, initNode));
 
     int n, m, i, j, maxSquare = 0;
