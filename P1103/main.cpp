@@ -43,6 +43,14 @@ void printTree(ofstream &fout, SegmentTree *root) {
     printTree(fout, root->rson);
 }
 
+void deleteMem(SegmentTree *root) {
+    if (root == nullptr)
+        return;
+    deleteMem(root->lson);
+    deleteMem(root->rson);
+    delete root;
+};
+
 int main() {
 
     ifstream fin("a.in");
@@ -61,7 +69,7 @@ int main() {
     }
 
     fout << root->count;
-
+    deleteMem(root);
     fin.close();
     fout.close();
     return 0;
